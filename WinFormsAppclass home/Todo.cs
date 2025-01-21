@@ -23,5 +23,9 @@ namespace WinFormsAppclass_home
             IsDone = doneState;
         }
 
+        public override string? ToString()
+        {
+            return $"{Id}-{DueDate}-{TaskDescription}";
+        }
     }
 }

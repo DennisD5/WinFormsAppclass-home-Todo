@@ -31,12 +31,12 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             listView1 = new ListView();
             gbtask = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
+            buttonClear = new Button();
+            buttonAdd = new Button();
             label2 = new Label();
-            textBox1 = new TextBox();
+            textBoxDueDate = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            textBoxTask = new TextBox();
             groupBoxList = new GroupBox();
             gbtask.SuspendLayout();
             groupBoxList.SuspendLayout();
@@ -52,12 +52,12 @@
             // 
             // gbtask
             // 
-            gbtask.Controls.Add(button1);
-            gbtask.Controls.Add(button2);
+            gbtask.Controls.Add(buttonClear);
+            gbtask.Controls.Add(buttonAdd);
             gbtask.Controls.Add(label2);
-            gbtask.Controls.Add(textBox1);
+            gbtask.Controls.Add(textBoxDueDate);
             gbtask.Controls.Add(label3);
-            gbtask.Controls.Add(textBox2);
+            gbtask.Controls.Add(textBoxTask);
             gbtask.Location = new Point(12, 12);
             gbtask.Name = "gbtask";
             gbtask.Size = new Size(420, 159);
@@ -65,23 +65,24 @@
             gbtask.TabStop = false;
             gbtask.Text = "Task Form";
             // 
-            // button1
+            // buttonClear
             // 
-            button1.Location = new Point(247, 127);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 12;
-            button1.Text = "Clear";
-            button1.UseVisualStyleBackColor = true;
+            buttonClear.Location = new Point(247, 127);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(75, 23);
+            buttonClear.TabIndex = 12;
+            buttonClear.Text = "Clear";
+            buttonClear.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonAdd
             // 
-            button2.Location = new Point(328, 127);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 11;
-            button2.Text = "Add ToDo";
-            button2.UseVisualStyleBackColor = true;
+            buttonAdd.Location = new Point(328, 127);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(75, 23);
+            buttonAdd.TabIndex = 11;
+            buttonAdd.Text = "Add ToDo";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += button2_Click;
             // 
             // label2
             // 
@@ -92,13 +93,13 @@
             label2.TabIndex = 10;
             label2.Text = "Due Date";
             // 
-            // textBox1
+            // textBoxDueDate
             // 
-            textBox1.Location = new Point(81, 98);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "2025-01-20";
-            textBox1.Size = new Size(322, 23);
-            textBox1.TabIndex = 9;
+            textBoxDueDate.Location = new Point(81, 98);
+            textBoxDueDate.Name = "textBoxDueDate";
+            textBoxDueDate.PlaceholderText = "2025-01-20";
+            textBoxDueDate.Size = new Size(322, 23);
+            textBoxDueDate.TabIndex = 9;
             // 
             // label3
             // 
@@ -109,12 +110,12 @@
             label3.TabIndex = 8;
             label3.Text = "Task";
             // 
-            // textBox2
+            // textBoxTask
             // 
-            textBox2.Location = new Point(81, 59);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(322, 23);
-            textBox2.TabIndex = 7;
+            textBoxTask.Location = new Point(81, 59);
+            textBoxTask.Name = "textBoxTask";
+            textBoxTask.Size = new Size(322, 23);
+            textBoxTask.TabIndex = 7;
             // 
             // groupBoxList
             // 
@@ -134,6 +135,8 @@
             Controls.Add(groupBoxList);
             Controls.Add(gbtask);
             Name = "Form1";
+            Text = "ToDo App";
+            Load += Form1_Load;
             gbtask.ResumeLayout(false);
             gbtask.PerformLayout();
             groupBoxList.ResumeLayout(false);
@@ -144,12 +147,12 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ListView listView1;
         private GroupBox gbtask;
-        private Button button1;
-        private Button button2;
+        private Button buttonClear;
+        private Button buttonAdd;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox textBoxDueDate;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox textBoxTask;
         private GroupBox groupBoxList;
     }
 }
