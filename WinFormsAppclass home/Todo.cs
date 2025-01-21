@@ -11,7 +11,7 @@ namespace WinFormsAppclass_home
         public static int ObjectCounter = 0;
         public int Id { get; set; }
         public string TaskDescription { get; set; }
-        public DataTime DueDate { get; set; }
+        public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
 
         public Todo(string description, DateTime date, bool doneState)
