@@ -17,10 +17,30 @@ namespace WinFormsAppclass_home
             var date = DateTime.Parse(textBoxDueDate.Text);
 
             // Where we handle the add event.
-            Todo MyTodo = new Todo(textBoxTask.Text, date);
+            todo MyTodo = new Todo(textBoxTask.Text, date);
 
             MessageBox.Show("Succes");
 
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+        
+            textBoxTask.Clear();
+            textBoxDueDate.Show();
+            MessageBox.Show("Form cleared");
+
+
+            listView1.Items.Add(MyTodo.toString());
+
+            ClearForm();
+        }
+
+        private void ClearForm()
+
+        { 
+            textBoxTask.Clear();
+            textBoxDueDate.Clear();
         }
     }
 }

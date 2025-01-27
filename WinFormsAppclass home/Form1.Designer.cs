@@ -73,6 +73,7 @@
             buttonClear.TabIndex = 12;
             buttonClear.Text = "Clear";
             buttonClear.UseVisualStyleBackColor = true;
+            buttonClear.Click += buttonClear_Click;
             // 
             // buttonAdd
             // 
@@ -106,7 +107,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(20, 59);
             label3.Name = "label3";
-            label3.Size = new Size(29, 15);
+            label3.Size = new Size(30, 15);
             label3.TabIndex = 8;
             label3.Text = "Task";
             // 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsAppclass_home
 {
-    public class Todo
+    public class todo
     {
         public static int ObjectCounter = 0;
         public int Id { get; set; }
@@ -14,7 +14,7 @@ namespace WinFormsAppclass_home
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
 
-        public Todo(string description, DateTime date, bool doneState)
+        public todo(string description, DateTime date, bool doneState)
         {
             ObjectCounter++;
             Id = ObjectCounter;
@@ -26,6 +26,7 @@ namespace WinFormsAppclass_home
         public override string? ToString()
         {
             return $"{Id}-{DueDate}-{TaskDescription}";
+           
         }
     }
 }
