@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsAppclass_home
 {
-    public class todo
+    public class Todo
     {
         public static int ObjectCounter = 0;
         public int Id { get; set; }
@@ -14,7 +14,7 @@ namespace WinFormsAppclass_home
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
 
-        public todo(string description, DateTime date, bool doneState)
+        public Todo(string description, DateTime date, bool doneState)
         {
             ObjectCounter++;
             Id = ObjectCounter;

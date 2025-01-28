@@ -2,6 +2,9 @@ namespace WinFormsAppclass_home
 {
     public partial class Form1 : Form
     {
+        
+        private Todo MyTodo;
+
         public Form1()
         {
             InitializeComponent();
@@ -9,36 +12,38 @@ namespace WinFormsAppclass_home
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var date = DateTime.Parse(textBoxDueDate.Text);
 
-            // Where we handle the add event.
-            todo MyTodo = new Todo(textBoxTask.Text, date);
+            
+            MyTodo = new Todo(textBoxTask.Text, date, false);
 
-            MessageBox.Show("Succes");
+            MessageBox.Show("Success");
 
+           
+            listView1.Items.Add(MyTodo.ToString());
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-        
             textBoxTask.Clear();
-            textBoxDueDate.Show();
+            textBoxDueDate.Clear(); 
             MessageBox.Show("Form cleared");
 
-
-            listView1.Items.Add(MyTodo.toString());
+            
+            if (MyTodo != null)
+            {
+                listView1.Items.Add(MyTodo.ToString());
+            }
 
             ClearForm();
         }
 
         private void ClearForm()
-
-        { 
+        {
             textBoxTask.Clear();
             textBoxDueDate.Clear();
         }
