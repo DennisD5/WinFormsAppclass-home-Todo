@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsAppclass_home
+namespace WinformTodo
 {
     public class Todo
     {
@@ -14,7 +14,28 @@ namespace WinFormsAppclass_home
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
 
-        public Todo(string description, DateTime date, bool doneState)
+        public string GetStatus()
+        {
+            string status = "";
+
+            if (IsDone)
+            {
+                status = "Status: Complete";
+            }
+            else
+            {
+                status = "Status: Incomplete";
+            }
+
+            return status;
+        }
+
+        public Todo()
+        {
+            
+        }
+
+        public Todo(string description, DateTime date, bool doneState = false)
         {
             ObjectCounter++;
             Id = ObjectCounter;
@@ -25,8 +46,7 @@ namespace WinFormsAppclass_home
 
         public override string? ToString()
         {
-            return $"{Id}-{DueDate}-{TaskDescription}";
-           
+            return $"{Id} - {DueDate} - {TaskDescription} - { GetStatus() }";
         }
     }
 }
