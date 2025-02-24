@@ -2,10 +2,8 @@
 {
     partial class Form1
     {
-      
         private System.ComponentModel.IContainer components = null;
 
-        
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -32,7 +30,7 @@
             lblTaskBoxLabel = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            lbTaskList = new ListBox();
+            fpTasks = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
             gbTaskList.SuspendLayout();
             SuspendLayout();
@@ -54,7 +52,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(162, 74);
+            btnClear.Location = new Point(184, 74);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 23);
             btnClear.TabIndex = 5;
@@ -64,7 +62,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(243, 74);
+            btnAdd.Location = new Point(265, 74);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 4;
@@ -95,7 +93,7 @@
             lblTaskBoxLabel.AutoSize = true;
             lblTaskBoxLabel.Location = new Point(6, 19);
             lblTaskBoxLabel.Name = "lblTaskBoxLabel";
-            lblTaskBoxLabel.Size = new Size(29, 15);
+            lblTaskBoxLabel.Size = new Size(30, 15);
             lblTaskBoxLabel.TabIndex = 1;
             lblTaskBoxLabel.Text = "Task";
             // 
@@ -109,7 +107,7 @@
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(lbTaskList);
+            gbTaskList.Controls.Add(fpTasks);
             gbTaskList.Location = new Point(12, 123);
             gbTaskList.Name = "gbTaskList";
             gbTaskList.Size = new Size(346, 473);
@@ -117,15 +115,13 @@
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // lbTaskList
+            // fpTasks
             // 
-            lbTaskList.FormattingEnabled = true;
-            lbTaskList.ItemHeight = 15;
-            lbTaskList.Location = new Point(6, 22);
-            lbTaskList.Name = "lbTaskList";
-            lbTaskList.Size = new Size(334, 439);
-            lbTaskList.TabIndex = 0;
-            lbTaskList.SelectedIndexChanged += lbTaskList_SelectedIndexChanged;
+            fpTasks.AutoScroll = true;
+            fpTasks.Location = new Point(6, 22);
+            fpTasks.Name = "fpTasks";
+            fpTasks.Size = new Size(334, 445);
+            fpTasks.TabIndex = 0;
             // 
             // Form1
             // 
@@ -152,6 +148,6 @@
         private TextBox txtDueDate;
         private Button btnClear;
         private GroupBox gbTaskList;
-        private ListBox lbTaskList;
+        private FlowLayoutPanel fpTasks;
     }
 }

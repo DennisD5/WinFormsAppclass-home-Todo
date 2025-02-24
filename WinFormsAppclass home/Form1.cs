@@ -12,8 +12,8 @@ namespace WinformTodo
 
         private void submitForm(object sender, EventArgs e)
         {
-           
-            if (Validators.IsEmptyText(txtTaskDescription)) 
+            
+            if (Validators.IsEmptyText(txtTaskDescription))
             {
                 MessageBox.Show("Description is empty, please provide a description.");
                 return;
@@ -36,14 +36,11 @@ namespace WinformTodo
                 MessageBox.Show("Date is incorrectly formatted, please resubmit.");
                 return;
             }
-
-
-
-            
+           
             Todo myTodo = new Todo(txtTaskDescription.Text, DateTime.Parse(txtDueDate.Text));
 
-            
             TaskList.Add(myTodo);
+            fpTasks.Controls.Add(new TaskControl(myTodo));
 
             UpdateListBox();
 
@@ -52,9 +49,6 @@ namespace WinformTodo
 
         public void UpdateListBox()
         {
-            
-            lbTaskList.Items.Clear();
-
             
             var list = TaskList
                 
@@ -65,10 +59,10 @@ namespace WinformTodo
             
             for (int i = 0; i < list.Count; i++)
             {
-                lbTaskList.Items.Add(list[i].ToString());
+               
             }
 
-            
+           
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -91,37 +85,6 @@ namespace WinformTodo
             }
         }
 
-        private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
-            int selectedIndex = lbTaskList.SelectedIndex;
-            string selectedItem = (string)lbTaskList.SelectedItem;
-
-            if (selectedIndex == -1)
-            {
-                return;
-            }
-
-            if (selectedItem == null)
-            {
-                MessageBox.Show("No item selected at the index.");
-                return;
-            }
-
-            
-
-            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
-
-            
-            var todo = TaskList.Find(t => t.Id == id);
-
-            if (todo != null)
-            {
-                todo.IsDone = !todo.IsDone;
-
-                UpdateListBox();
-            }
-        }
+       
     }
 }
